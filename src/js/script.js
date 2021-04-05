@@ -331,7 +331,7 @@
       let subtotalPrice = 0;
       for (let product of thisCart.products){
         totalNumber += product.amount;
-        subtotalPrice += product.price * product.amount;
+        subtotalPrice += product.priceSingle * product.amount;
       }
       if (totalNumber === 0){
         thisCart.totalPrice = 0;
@@ -340,6 +340,7 @@
         thisCart.totalPrice = subtotalPrice + deliveryFee;
       }
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
+      thisCart.dom.totalNumber.innerHTML = totalNumber;
       thisCart.dom.subTotalPrice.innerHTML = subtotalPrice;
       thisCart.dom.totalPrice[0].innerHTML = thisCart.totalPrice;
       thisCart.dom.totalPrice[1].innerHTML = thisCart.totalPrice;
