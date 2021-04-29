@@ -24,13 +24,13 @@ const app = {
     thisApp.data = {};
     const url = settings.db.url + '/' + settings.db.product;
     fetch(url)
-    .then(function(rawResponse){
-      return rawResponse.json();
-    })
-    .then(function(parsedResponse){
-      thisApp.data.products = parsedResponse;
-      thisApp.initMenu();
-    });
+      .then(function(rawResponse){
+        return rawResponse.json();
+      })
+      .then(function(parsedResponse){
+        thisApp.data.products = parsedResponse;
+        thisApp.initMenu();
+      });
   },
   init: function(){
     const thisApp = this;
