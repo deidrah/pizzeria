@@ -9,8 +9,8 @@ class Product{
     thisProduct.renderInMenu();
     thisProduct.getElements();
     thisProduct.initAccordion();
-    thisProduct.initOrderForm();
     thisProduct.initAmountWidget();
+    thisProduct.initOrderForm();
     thisProduct.processOrder();
     thisProduct.prepareCartProductParams();
   }
@@ -54,9 +54,9 @@ class Product{
     /* prevent default action for event */
       event.preventDefault();
       /* find active product (product that has active class) */
-      let activeProduct = document.querySelector(classNames.menuProduct.wrapperActive);
+      let activeProducts = document.querySelectorAll('.product.'+classNames.menuProduct.wrapperActive);
       /* if there is active product and it's not thisProduct.element, remove class active from it */
-      if ((activeProduct != null) && (activeProduct != thisProduct.element)){
+      for (let activeProduct of activeProducts){
         activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
       }
       /* toggle active class on thisProduct.element */
