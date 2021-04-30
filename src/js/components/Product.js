@@ -57,7 +57,9 @@ class Product{
       let activeProducts = document.querySelectorAll('.product.'+classNames.menuProduct.wrapperActive);
       /* if there is active product and it's not thisProduct.element, remove class active from it */
       for (let activeProduct of activeProducts){
-        activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
+        if (activeProduct !== null){
+          activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
+        }
       }
       /* toggle active class on thisProduct.element */
       thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
