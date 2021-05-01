@@ -133,6 +133,7 @@ class Booking {
       if(!isNaN(tableId)){
         tableId = parseInt(tableId);
       }
+      table.classList.remove(classNames.booking.tableSelected);
       if(
         !allAvailable
         &&
