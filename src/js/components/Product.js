@@ -53,16 +53,16 @@ class Product{
     thisProduct.dom.accordionTrigger.addEventListener('click', function(event) {
     /* prevent default action for event */
       event.preventDefault();
+      thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
       /* find active product (product that has active class) */
       let activeProducts = document.querySelectorAll('.product.'+classNames.menuProduct.wrapperActive);
       /* if there is active product and it's not thisProduct.element, remove class active from it */
       for (let activeProduct of activeProducts){
-        if (activeProduct !== null){
+        if (activeProduct !== thisProduct.element){
           activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
         }
       }
       /* toggle active class on thisProduct.element */
-      thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
     });
   }
 
