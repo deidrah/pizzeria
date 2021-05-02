@@ -26,6 +26,7 @@ class Home {
     const thisHome = this;
 
     thisHome.element = document.querySelector(select.widgets.carousel);
+    //eslint-disable-next-line no-undef
     thisHome.flkty = new Flickity(thisHome.element, {
       cellAlign: 'left',
       contain: true,
